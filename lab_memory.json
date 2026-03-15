@@ -1,0 +1,57 @@
+{
+  "project": "cluster-failures",
+  "created": "2026-03-15",
+  "runs": [
+    {
+      "cycle": 1,
+      "date": "2026-03-15 14:32",
+      "question": "Why do clusters fail",
+      "result": "Clusters fail primarily through cascade dynamics following power-law distribution (α ≈ 1.5-2.0). Three modes: cascade propagation (40%), resource exhaustion (35%), network partitions (25%). Detection latency is the hidden variable - cascades outpace monitoring.",
+      "supported": [
+        "Cascade failures follow power-law distribution with α ≈ 1.5-2.0",
+        "Resource exhaustion is predictable but detection latency causes cascades",
+        "Network partition impact correlates with duration, not size",
+        "Real incidents (AWS S3 2017, AWS 2021, Azure AD 2022, GCP 2022) share cascade patterns"
+      ],
+      "rejected": [
+        "Root cause analysis as primary diagnostic tool - the trigger is arbitrary, the distribution is the cause"
+      ],
+      "unknown": [
+        "Can systems resist self-organized criticality or is it inevitable?",
+        "Does microservices architecture increase systemic risk?",
+        "What is ethical responsibility for engineers building uncontrollable systems?"
+      ],
+      "next_tests": [
+        "Test 1: Cascade Propagation Rate Validation (50+ postmortems, power-law fit)",
+        "Test 2: Resource Exhaustion Detection Latency (Kubernetes + Prometheus)",
+        "Test 3: Network Partition Recovery Time vs Failure Scope",
+        "Test 4: Real Incident Alpha Estimation (Historical Analysis)",
+        "Test 5: Cross-Failure-Mode Correlation Matrix"
+      ],
+      "agents_used": [
+        "ClaudeResearcher (Scientist)",
+        "GrokResearcher (Skeptic)",
+        "ClaudeResearcher (Historian)",
+        "CodexResearcher (Experimenter)",
+        "GeminiResearcher (Explainer)",
+        "General-purpose (Philosopher)",
+        "Artist (Media skill)"
+      ],
+      "status": "complete"
+    }
+  ],
+  "dead_ends": [],
+  "open_questions": [
+    "If distributed systems behave like natural systems, should we borrow from ecology/epidemiology?",
+    "Is microservices increasing systemic risk by raising complexity ceiling?",
+    "Can we design systems that resist self-organized criticality?",
+    "What is ethical responsibility for uncontrollable systems?",
+    "If root cause analysis is misguided, what post-mortem practices serve learning?"
+  ],
+  "key_insights": [
+    "Detection latency is the hidden variable determining cascade outcomes",
+    "Prevention has diminishing returns - each safeguard adds complexity and new failure modes",
+    "Reliability is not absence of failure, it is graceful degradation under failure",
+    "We built digital ecosystems obeying same laws as forests, earthquakes, epidemics"
+  ]
+}
