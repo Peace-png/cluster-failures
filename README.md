@@ -172,22 +172,27 @@ Design for cascade containment, not just component reliability. Circuit breakers
 
 ## Visualizations
 
-### Viz 1: Cascade Failure Distribution (Power-Law Dynamics)
-- **Type**: Log-log scatter plot with fitted regression
-- **Data**: Cascade size vs probability density, α = 1.75
-- **Key**: Real incident points annotated (AWS S3, AWS 2021, Azure AD, GCP)
-- **Insight**: Detection threshold shows where cascades outpace monitoring
+### Cascade Failure Distribution (Power-Law Dynamics)
 
-### Viz 2: Failure Mode Taxonomy
-- **Type**: Horizontal stacked bar chart
-- **Data**: Cascade (40%), Resource (35%), Network (25%) with sub-categories
-- **Key**: Network topology and memory pressure are most common roots
+![Cascade Distribution](results/plots/01_cascade_distribution.png)
 
-### Viz 3: Detection Latency vs Cascade Propagation
-- **Type**: Dual-line time-series with crossing point
-- **Data**: Exponential cascade growth vs step-function detection
-- **Key**: At t=60s, "CASCADE WINS" — detection too slow
-- **Insight**: Blind spot between detection latency and cascade growth
+Cascade sizes follow a power-law distribution (α = 1.75). Small cascades are common, but the heavy tail means catastrophic events are statistically inevitable. Real incidents (AWS S3, Azure AD, GCP, AWS 2021) annotated on the curve. Detection threshold shows where cascades outpace monitoring.
+
+---
+
+### Failure Mode Taxonomy
+
+![Failure Taxonomy](results/plots/02_failure_taxonomy.png)
+
+Three primary failure modes: Cascade Propagation (40%), Resource Exhaustion (35%), Network Partitions (25%). Network topology and memory pressure are the most common root causes.
+
+---
+
+### Detection Latency vs Cascade Propagation
+
+![Detection Race](results/plots/03_detection_race.png)
+
+The race against catastrophe: By t=60s, the cascade has grown 20x while monitoring is still confirming the incident. The blind spot between detection latency and cascade growth is where failures become catastrophes.
 
 ---
 
