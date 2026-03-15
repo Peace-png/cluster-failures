@@ -1,10 +1,3 @@
-# Andrew Hagan Research Lab
-
-**Author**: Andrew Hagan
-**License**: MIT © Andrew Hagan 2026
-
----
-
 # Research Report: Why Do Clusters Fail
 
 ## Quick Summary
